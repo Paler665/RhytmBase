@@ -65,7 +65,15 @@ export default function Beranda() {
         <div className="boxTambahLirik">
           <h1>Tambah</h1>
           <h1>Lirik Lagu</h1>
-          <img src="/Tambah.svg" alt="Tambah Lirik" className="boxIcon" onClick={() => navigate("/add-song")} />
+          <img src="/Tambah.svg" alt="Tambah Lirik" className="boxIcon"
+            onClick={() => {
+              if (!loginStatus) {
+                alert("Login terlebih dahulu agar bisa akses halaman favorit.");
+                return;
+              }
+              navigate("/add-song");
+            }}
+          />
         </div>
         <div className="boxJelajahi" onClick={() => navigate("/songs")}>
           <h1>Jelajahi</h1>
