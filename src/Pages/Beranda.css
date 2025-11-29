@@ -1,0 +1,334 @@
+.HeroWrapperAtas {
+  font-family: "Yuruka", sans-serif;
+  display: flex;
+  width: 100%;
+  background: linear-gradient(to bottom, #0077b6, #023e8a);
+  color: white;
+  padding: 20px;
+  overflow: hidden;
+  box-sizing: border-box;
+  border-radius: 0 0 20px 20px;
+}
+
+.HeroAtasKanan {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: left;
+  text-align: left;
+  width: 100%;
+  line-height: 1.1;
+}
+
+.HeroAtasKiri {
+  width: 100%;
+}
+
+/* Box */
+.boxHolder {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  font-family: "Yuruka", sans-serif;
+  padding-bottom: 7rem;
+}
+
+.boxTambahLirik {
+  color: white;
+  text-shadow: 0 2.5px 1px #1B8DE4;
+  width: 100%;
+  max-width: 25rem;
+  min-width: 250px;
+  height: 30rem;
+  border-radius: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  outline: white solid 4px;
+  /* inner glow */
+  box-shadow:
+  inset 0 1px 2px rgba(255, 255, 255, 0.3),
+  inset 0 -1px 2px rgba(255, 255, 255, 0.12),
+  0 8px 15px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(20px);
+  /* biar transparan */
+  background: linear-gradient(
+  to bottom,
+  rgba(50, 195, 252, 0.7),
+  rgba(32, 231, 231, 0.7)
+);
+}
+
+.boxTambahLirik:hover {
+  transform: scale(1.04);
+  cursor: pointer; 
+}
+
+.boxTambahLirik:active {
+  transform: scale(1.06);
+}
+
+.boxIcon {
+  width: 20rem;
+  height: auto;
+}
+
+.informationHolder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.trendingTextBox{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Yuruka", sans-serif;
+  color: white;
+  text-align: center;
+  background-color: #023e8a;
+  max-width: 25rem;
+  margin-left: 2rem;
+  margin-top: 1rem;
+  border-radius: 3rem;
+  box-shadow:
+  inset 0 1px 2px rgba(255, 255, 255, 0.3),
+  inset 0 -1px 2px rgba(255, 255, 255, 0.12),
+  0 8px 15px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(20px);
+  outline: white solid 4px;
+  background: linear-gradient(
+  to bottom,
+  rgba(137, 110, 240, 0.6),
+  rgba(2, 62, 138, 0.6),
+  rgba(50, 195, 252, 0.6)
+);
+box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.latestTextBox{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Yuruka", sans-serif;
+  color: white;
+  text-align: center;
+  background-color: #023e8a;
+  max-width: 40rem;
+  margin-left: 2rem;
+  margin-top: 1rem;
+  border-radius: 3rem;
+  box-shadow:
+  inset 0 1px 2px rgba(255, 255, 255, 0.3),
+  inset 0 -1px 2px rgba(255, 255, 255, 0.12),
+  0 8px 15px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(20px);
+  outline: white solid 4px;
+  background: linear-gradient(
+  to bottom,
+  rgba(137, 110, 240, 0.6),
+  rgba(2, 62, 138, 0.6),
+  rgba(50, 195, 252, 0.6)
+);
+box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.boxJelajahi {
+  color: white;
+  text-shadow: 0 2.5px 1px #1B8DE4;
+  width: 100%;
+  max-width: 25rem;
+  min-width: 250px;
+  height: 30rem;
+  border-radius: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  outline: white solid 4px;
+  /* inner glow */
+  box-shadow:
+  inset 0 1px 2px rgba(255, 255, 255, 0.3),
+  inset 0 -1px 2px rgba(255, 255, 255, 0.12),
+  0 8px 15px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(20px);
+  /* biar transparan */
+  background: linear-gradient(
+  to bottom,
+  rgba(255, 175, 204, 0.7),
+  rgba(246, 202, 220, 0.7)
+);
+}
+
+.boxJelajahi:hover {
+  transform: scale(1.04);
+  cursor: pointer; 
+}
+
+.boxJelajahi:active {
+  transform: scale(1.06);
+}
+
+.boxFaforit {
+  color: white;
+  text-shadow: 0 2.5px 1px #1B8DE4;
+  width: 100%;
+  max-width: 25rem;
+  min-width: 250px;
+  height: 30rem;
+  border-radius: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  outline: white solid 4px;
+  /* inner glow */
+  box-shadow:
+  inset 0 1px 2px rgba(255, 255, 255, 0.3),
+  inset 0 -1px 2px rgba(255, 255, 255, 0.12),
+  0 8px 15px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(20px);
+  /* biar transparan */
+  background: linear-gradient(
+  to bottom,
+  rgba(225, 40, 133, 0.7),
+  rgba(255, 91, 179, 0.7)
+);
+}
+
+.boxFaforit:hover {
+  transform: scale(1.04);
+  cursor: pointer; 
+}
+
+.boxFaforit:active {
+  transform: scale(1.06);
+}
+
+.logo {
+  width: 30rem;
+  height: auto;
+}
+
+.trendingGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-left: 3rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.trendingCard {
+  font-family: yuruka, sans-serif;
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 20px;
+  padding: 1rem;
+  width: 18rem;
+  box-shadow: 
+    0 4px 10px rgba(0, 0, 0, 0.05),
+    inset 0 1px 2px rgba(255, 255, 255, 0.4);
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
+  outline: white solid 4px;
+  transition: transform 0.2s ease;
+}
+.trendingCard:hover {
+  transform: scale(1.04);
+  cursor: pointer; 
+}
+.trendingCard:active {
+  transform: scale(1.06);
+}
+.trendingImage {
+  width: 18rem;
+  height: auto;
+  border-radius: 12px;
+  background-color: white;
+}
+
+/* ---- MOBILE RESPONSIVE ---- */
+@media (max-width: 768px) {
+  .HeroWrapperAtas {
+    flex-direction: column;
+    padding: 16px;
+    min-height: auto;  /* biar mobile tidak memaksa tinggi besar */
+  }
+
+  .HeroAtasKanan {
+    width: 100%;
+    text-align: left; /* sesuai yang kamu mau */
+    align-items: flex-start;
+  }
+
+  .HeroAtasKiri {
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .LyricsBtn {
+    width: 60%; /* tombol full width di mobile */
+  }
+
+  .boxHolder {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding-bottom: 8rem;
+}
+
+  .box {
+  background-color: white;
+  width: 100%;
+  max-width: 18rem;
+  height: 20rem;
+  border-radius: 8px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.boxIcon {
+  width: 13rem;
+  height: auto;
+}
+
+.logo {
+  width: auto;
+  height: auto;
+}
+.trendingImage {
+  width: 8rem;
+  height: auto;
+}
+.trendingGrid {
+  grid-template-columns: repeat(2, 1fr);
+  margin-left: 0;
+  justify-items: center;
+}
+.trendingCard {
+  width: 8.5rem;
+}
+}

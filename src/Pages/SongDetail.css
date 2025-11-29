@@ -1,0 +1,188 @@
+.songDetailPage h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+}
+.musicCover {
+    width: 15rem;
+    height: auto;
+    border-radius: 20px;
+}
+.upperSongInfobox{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    border-radius: 20px;
+    padding: 1.5rem 1rem 3rem 3rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    color: black;
+    /* warna segala macem */
+    outline: white solid 4px;
+    /* inner glow */
+    box-shadow:
+    inset 0 1px 2px rgba(255, 255, 255, 0.3),
+    inset 0 -1px 2px rgba(255, 255, 255, 0.12),
+    0 8px 15px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(20px);
+    /* biar transparan */
+    background: linear-gradient(
+    to bottom,
+    rgba(239, 232, 222, 0.4),
+    rgba(220, 220, 220, 0.4)
+    );
+}
+.songDetailPage {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.descBoxLeft {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+  font-family: "Yuruka", sans-serif;
+  flex: 1;
+}
+
+/* tombol faforit */
+.favoriteBtn {
+  padding: 0.6rem 1.3rem;
+  font-size: 1rem;
+  border-radius: 20px;
+  border: none;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.favoriteBtn:hover {
+  background-color: #2A2A2A;
+  transform: scale(1.05);
+}
+
+.favoriteBtn:active {
+  transform: scale(1.03);
+}
+
+.favoriteBtn.favActive {
+  background-color: #E50914;
+}
+
+.favoriteBtn.favActive:hover {
+  background-color: #B20710;
+}
+
+
+.descBoxRight{
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+  font-family: "Yuruka", sans-serif; 
+  margin-right: 1rem;
+}
+.backButton {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  padding: 8px 0;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.backButton:hover {
+  color: #0077ff;
+}
+
+/* box bagian bawah yang ada lirik sama */
+.downBox{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    gap: 2rem;
+    border-radius: 20px;
+    padding: 1.5rem 1rem 3rem 3rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    color: black;
+    /* warna segala macem */
+    outline: white solid 4px;
+    /* inner glow */
+    box-shadow:
+    inset 0 1px 2px rgba(255, 255, 255, 0.3),
+    inset 0 -1px 2px rgba(255, 255, 255, 0.12),
+    0 8px 15px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(20px);
+    /* biar transparan */
+    background: linear-gradient(
+    to bottom,
+    rgba(239, 232, 222, 0.4),
+    rgba(220, 220, 220, 0.4)
+    );
+}
+
+.lyricsButton {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.lyricBtn {
+  padding: 0.6rem 1.2rem;
+  border-radius: 20px;
+  border: 2px solid #8E5AF7;
+  background: rgba(255,255,255,0.7);
+  cursor: pointer;
+  transition: 0.2s;
+  color: black;
+  font-family: yuruka, sans-serif;
+}
+
+.lyricBtn:hover {
+  background: rgba(142, 90, 247, 0.15);
+  transform: scale(1.08);
+}
+
+.lyricBtn:active {
+  transform: scale(1.02);
+}
+
+.lyricBtn.activeLang {
+  background: #8E5AF7;
+  color: white;
+  border-color: #8E5AF7;
+}
+
+.lyricDisplayBox {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: rgba(255,255,255,0.8);
+  border-radius: 20px;
+  border: 2px solid #dcdcdc;
+}
+
+.lyricText {
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+}
+
+.fadeIn {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.fadeOut {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.lyricText {
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  white-space: pre-line; /* MAGIC LINE */
+}

@@ -1,0 +1,114 @@
+.profilePage{
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(
+  to bottom,
+  #F20D5E 0%,
+  #FF6AA8 50%,
+  #FFC8DE 100%
+);
+margin: 0;
+padding: 0;
+}
+.ProfileContainer {
+  font-family: yuruka, sans-serif;
+  display: flex;
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(10px);
+  box-shadow: 4px 4px 12px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  margin: 2rem;
+  margin-right: 0;
+  align-items: center;
+  justify-content: center;
+  height: 35rem;
+  outline: #F20D5E solid 4px;
+  width: 25rem;
+}
+
+.detailWrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.ProfilePic{
+    width: auto;
+    height: 15rem;
+    border-radius: 20px;
+}
+
+.ProfileDetail{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+.LogoutBtn {
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background: #E50914;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.LogoutBtn:hover {
+  background: #b20710;
+  transform: scale(1.05);
+}
+
+.LogoutBtn:active {
+  transform: scale(1.02);
+}
+
+.EditBtn {
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background: #89FE70;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.EditBtn:hover {
+  background: #6ED65B;;
+  transform: scale(1.05);
+}
+
+.EditBtn:active {
+  transform: scale(1.02);
+}
+
+.addedSongContainer {
+  font-family: yuruka, sans-serif;
+  display: flex;
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(10px);
+  box-shadow: 4px 4px 12px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  margin: 2rem;
+  align-items: center;
+  justify-content: center;
+  height: 50rem;
+  outline: #F20D5E solid 4px;
+  width: 85rem;
+}
+
+@media (max-width: 768px) {
+    .ProfilePic{
+        height: 10rem;
+        width: auto;
+    }
+}
