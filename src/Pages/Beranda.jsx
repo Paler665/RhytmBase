@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom"
 import "./Beranda.css";
 import { useContext } from "react";
-import { AuthContext } from "../context/AuthContext";
+import { AuthContext } from "../Context/AuthContext";
 
 export default function Beranda() {
   const { user, loginStatus } = useContext(AuthContext);

@@ -1,6 +1,6 @@
 import { useContext, useState, useEffect } from "react"
 import Login from "./Login"
-import { AuthContext } from "../context/AuthContext"
+import { AuthContext } from "../Context/AuthContext"
 import "./Profile.css"
 import { supabase } from "../lib/supabaseClient"
 
