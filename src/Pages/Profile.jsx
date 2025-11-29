@@ -8,7 +8,7 @@ export default function Profil() {
   const { user, loginStatus } = useContext(AuthContext)
 
   const [profilePicUrl, setProfilePicUrl] = useState("")
-  const [profileData, setProfileData] = useState(null) 
+  const [profileData, setProfileData] = useState(null)
 
   // LOADING FOTO (seperti sebelumnya)
   useEffect(() => {
@@ -23,7 +23,7 @@ export default function Profil() {
     loadPlaceholder()
   }, [])
 
-// ambil username
+  // ambil username
   useEffect(() => {
     async function loadProfile() {
 

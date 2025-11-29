@@ -8,7 +8,7 @@ import SongDetail from "./Pages/SongDetail.jsx"
 import About from "./Pages/AboutPage.jsx"
 import Favorite from "./Pages/FavoritePage.jsx"
 import { Routes, Route, useNavigate, useLocation } from "react-router-dom"
-import { AuthProvider } from "./context/AuthContext.jsx"
+import { AuthProvider } from "./context/AuthContext";
 import AddSong from "./Pages/AddSong.jsx"
 
 // motion import
