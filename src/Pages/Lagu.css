@@ -1,58 +1,64 @@
 .songPage {
-    padding-bottom: 5rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-image: url("/BGSong.png");
 }
 .containerLagu {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  margin-left: 3rem;
-  margin-top: 2rem;
-  margin-right: 3rem;
-  margin-bottom: 2rem;
-  /* tes */
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  border-radius: 20px;
-  box-shadow: 
-    0 4px 10px rgba(0, 0, 0, 0.05),
-    inset 0 1px 2px rgba(255, 255, 255, 0.4);
-  outline: purple solid 4px;
-  padding: 3rem;
-  background: rgba(255, 255, 255, 0.45);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-left: 3rem;
+    margin-top: 2rem;
+    margin-right: 3rem;
+    margin-bottom: 2rem;
+    /* tes */
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 20px;
+    box-shadow:
+        0 4px 10px rgba(0, 0, 0, 0.05),
+        inset 0 1px 2px rgba(255, 255, 255, 0.4);
+    outline: purple solid 4px;
+    padding: 3rem;
+    background: rgba(255, 255, 255, 0.45);
 }
 
 .songCard {
-  font-family: yuruka, sans-serif;
-  background: rgba(255, 255, 255, 1);
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  border-radius: 20px;
-  padding: 1rem;
-  width: 27rem;
-  box-shadow: 
-    0 4px 10px rgba(0, 0, 0, 0.05),
-    inset 0 1px 2px rgba(255, 255, 255, 0.4);
-  
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 0.7rem;
-  outline: white solid 4px;
-  transition: transform 0.2s ease;
+    font-family: yuruka, sans-serif;
+    background: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 20px;
+    padding: 1rem;
+    width: 27rem;
+    box-shadow:
+        0 4px 10px rgba(0, 0, 0, 0.05),
+        inset 0 1px 2px rgba(255, 255, 255, 0.4);
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.7rem;
+    outline: white solid 4px;
+    transition: transform 0.2s ease;
 }
 .songCard:hover {
-  transform: scale(1.04);
-  cursor: pointer; 
+    transform: scale(1.04);
+    cursor: pointer;
 }
 
 .songCard:active {
-  transform: scale(1.06);
+    transform: scale(1.06);
 }
 
 .songImage {
-  width: 10rem;
-  height: auto;
-  border-radius: 12px;
-  background-color: white;
+    width: 10rem;
+    height: auto;
+    border-radius: 12px;
+    background-color: white;
 }
 
 .songDesc {
@@ -60,131 +66,131 @@
 }
 
 .SongTextBox {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: "Yuruka", sans-serif;
-  color: white;
-  text-align: center;
-  background-color: #023e8a;
-  max-width: 15rem;
-  margin-left: 2rem;
-  margin-top: 1rem;
-  border-radius: 3rem;
-  box-shadow:
-  inset 0 1px 2px rgba(255, 255, 255, 0.3),
-  inset 0 -1px 2px rgba(255, 255, 255, 0.12),
-  0 8px 15px rgba(0, 0, 0, 0.08);
-  backdrop-filter: blur(20px);
-  outline: white solid 4px;
-  background: linear-gradient(
-  to bottom,
-  rgba(137, 110, 240, 0.6),
-  rgba(2, 62, 138, 0.6),
-  rgba(50, 195, 252, 0.6)
-);
-box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Yuruka", sans-serif;
+    color: white;
+    text-align: center;
+    background-color: #023e8a;
+    max-width: 15rem;
+    margin-left: 2rem;
+    margin-top: 1rem;
+    border-radius: 3rem;
+    box-shadow:
+        inset 0 1px 2px rgba(255, 255, 255, 0.3),
+        inset 0 -1px 2px rgba(255, 255, 255, 0.12),
+        0 8px 15px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(20px);
+    outline: white solid 4px;
+    background: linear-gradient(
+        to bottom,
+        rgba(137, 110, 240, 0.6),
+        rgba(2, 62, 138, 0.6),
+        rgba(50, 195, 252, 0.6)
+    );
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
 }
 
 .searchBarWrapper {
-  display: flex;
-  justify-content: center;
-  margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
 }
 
 .searchBar {
-  width: 80%;
-  max-width: 25rem;
-  padding: 0.8rem 1rem;
-  border-radius: 30px;
-  border: 2px solid #8E5AF7;
-  background: rgba(255, 255, 255, 0.45);
-  backdrop-filter: blur(10px);
-  font-size: 1rem;
-  outline: none;
-  color: #333;
+    width: 80%;
+    max-width: 25rem;
+    padding: 0.8rem 1rem;
+    border-radius: 30px;
+    border: 2px solid #8e5af7;
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(10px);
+    font-size: 1rem;
+    outline: none;
+    color: #333;
 }
 
 /* ==== PAGINATION CONTAINER ==== */
 .paginationWrapper {
-  margin-top: 2rem;
-  margin-bottom: 3rem;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2rem;
 
-  background: rgba(255, 255, 255, 0.85);  /* ← putih dengan transparansi */
-  padding: 0.8rem 1.6rem;
-  border-radius: 40px;
-  border: 4px solid #8E5AF7; /* outline ungu */
+    background: rgba(255, 255, 255, 0.85); /* ← putih dengan transparansi */
+    padding: 0.8rem 1.6rem;
+    border-radius: 40px;
+    border: 4px solid #8e5af7; /* outline ungu */
 
-  width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
 
-  backdrop-filter: blur(6px);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
 }
 
 /* ==== BUTTON BASE ==== */
 .pageBtn {
-  -webkit-appearance: none;
-  appearance: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    -webkit-appearance: none;
+    appearance: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-  width: 44px;
-  height: 44px;
-  padding: 0;
+    width: 44px;
+    height: 44px;
+    padding: 0;
 
-  border-radius: 50%;
-  border: none;
-  font-size: 18px;
-  line-height: 1;
-  font-weight: bold;
+    border-radius: 50%;
+    border: none;
+    font-size: 18px;
+    line-height: 1;
+    font-weight: bold;
 
-  background: #ffffff;
-  color: #1b2b49;
-  cursor: pointer;
+    background: #ffffff;
+    color: #1b2b49;
+    cursor: pointer;
 
-  transition: 0.18s ease-in-out;
-  box-shadow:
-    0 4px 12px rgba(0,0,0,0.12),
-    inset 0 2px 4px rgba(255,255,255,0.5);
+    transition: 0.18s ease-in-out;
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.12),
+        inset 0 2px 4px rgba(255, 255, 255, 0.5);
 }
 
 /* ==== BUTTON AKTIF (BIRU) ==== */
 .pageBtn.active {
-  background: linear-gradient(180deg, #2b88ff, #0066d9);
-  color: white;
-  box-shadow:
-    0 6px 14px rgba(0,102,255,0.25),
-    inset 0 2px 4px rgba(255,255,255,0.3);
+    background: linear-gradient(180deg, #2b88ff, #0066d9);
+    color: white;
+    box-shadow:
+        0 6px 14px rgba(0, 102, 255, 0.25),
+        inset 0 2px 4px rgba(255, 255, 255, 0.3);
 }
 
 /* ==== BUTTON DISABLED (ABU) ==== */
 .pageBtn:disabled {
-  cursor: not-allowed;
-  background: #7a7c82;
-  color: rgba(255,255,255,0.85);
-  box-shadow: none;
-  transform: none;
+    cursor: not-allowed;
+    background: #7a7c82;
+    color: rgba(255, 255, 255, 0.85);
+    box-shadow: none;
+    transform: none;
 }
 
 /* ==== HOVER ==== */
 .pageBtn:not(:disabled):hover {
-  transform: scale(1.06);
+    transform: scale(1.06);
 }
 
 /* ==== PAGE INDICATOR ==== */
 .pageIndicator {
-  color: black;
-  font-size: 1.1rem;
-  font-weight: 700;
-  min-width: 6.5rem;
-  text-align: center;
-  user-select: none;
+    color: black;
+    font-size: 1.1rem;
+    font-weight: 700;
+    min-width: 6.5rem;
+    text-align: center;
+    user-select: none;
 }

@@ -15,7 +15,9 @@ export default function FavoritePage() {
   useEffect(() => {
     async function loadFavorites() {
       // Ambil user
-      const { data: { user } } = await supabase.auth.getUser();
+      const {
+        data: { user },
+      } = await supabase.auth.getUser();
       if (!user) return;
 
       // Ambil daftar song_id yang difavoritkan
@@ -47,7 +49,7 @@ export default function FavoritePage() {
   // FILTER SEARCH
   // =====================================
   const filteredSongs = songs.filter((song) =>
-    song.title.toLowerCase().includes(search.toLowerCase())
+    song.title.toLowerCase().includes(search.toLowerCase()),
   );
 
   // PAGINATION
@@ -56,7 +58,7 @@ export default function FavoritePage() {
   const visible = filteredSongs.slice(startIndex, startIndex + perPage);
 
   return (
-    <div className="songPage">
+    <div className="favoritePage">
       <div className="SongTextBoxFavorite">
         <h1>Lagu Faforit</h1>
       </div>
@@ -98,9 +100,7 @@ export default function FavoritePage() {
             </div>
           ))
         ) : (
-          <div className="favoriteEmpty">
-            Belum ada lagu yang disukai
-          </div>
+          <div className="favoriteEmpty">Belum ada lagu yang disukai</div>
         )}
       </div>
 

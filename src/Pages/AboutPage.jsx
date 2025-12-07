@@ -1,4 +1,4 @@
-import "./AboutPage.css"
+import "./AboutPage.css";
 
 export default function About() {
   return (
@@ -9,21 +9,18 @@ export default function About() {
 
         <div className="aboutCard">
           <p>
-            RhytmBase adalah platform penyimpanan lirik lagu yang akan disajikan secara indah untuk orang-orang yang ingin mengeksplorasi lirik-lirik lagu faforit mereka
-          </p>
-
-          <p>
-            Halaman ini masih dalam proses pembangunan. Nantikan update berikutnya.
+            RhytmBase adalah platform penyimpanan lirik lagu yang akan disajikan
+            secara indah untuk orang-orang yang ingin mengeksplorasi lirik-lirik
+            lagu faforit mereka
           </p>
         </div>
 
         <p className="aboutFooter">
-          Dibuat oleh Farrel R.  
-          <br />2025 RhytmBase Project
+          Dibuat oleh Farrel R.
+          <br />
+          2025 RhytmBase Project
         </p>
-
       </div>
-
     </div>
-  )
+  );
 }

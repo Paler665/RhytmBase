@@ -1,0 +1,98 @@
+.editProfilePage {
+    font-family: "yuruka", sans-serif;
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    background-image: url("/BGProfile.png");
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.editProfileContainer {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    /* warna */
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(10px);
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    margin: 2rem;
+    align-items: center;
+    justify-content: center;
+    height: 50rem;
+    outline: #f20d5e solid 4px;
+    width: 85rem;
+}
+
+.profilePreview {
+    width: 150px;
+    height: 150px;
+    border-radius: 20px;
+    object-fit: cover;
+    background: #eee;
+    border: 3px solid #ccc;
+}
+
+.inputBox {
+    width: 250px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #aaa;
+    font-size: 1rem;
+}
+
+.chooseBtn,
+.saveBtn {
+    margin-top: 1rem;
+    padding: 12px 20px;
+    background: #0377ff;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.chooseBtn:hover,
+.saveBtn:hover {
+    opacity: 0.8;
+}
+
+.cancelBtn {
+    margin-top: 1rem;
+    padding: 12px 20px;
+    background: red;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.imageSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.formSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttonContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}

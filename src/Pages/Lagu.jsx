@@ -17,7 +17,8 @@ export default function Lagu() {
       const { data, error } = await supabase
         .from("songs")
         .select("*")
-        .order("id", { ascending: true });
+        .order("created_at", { ascending: false })   // 🔥 LAGU BARU MUNCUL DI ATAS
+        .order("id", { ascending: false });          // 🔥 BACKUP ORDER kalau created_at tidak ada
 
       if (error) console.log(error);
       else setSongs(data);
@@ -69,7 +70,6 @@ export default function Lagu() {
             <div className="songDesc">
               <strong>{item.title}</strong>
               <br />
-              {/* 🔥 LIMIT 100 CHAR */}
               {item.description?.length > 100
                 ? item.description.slice(0, 100) + "..."
                 : item.description}

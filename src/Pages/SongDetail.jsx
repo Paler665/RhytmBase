@@ -12,6 +12,7 @@ export default function SongDetail() {
   const [favorite, setFavorite] = useState(false)
   const [selectedLang, setSelectedLang] = useState(null)
   const [fade, setFade] = useState(true)
+  const [error, setError] = useState(null)
 
   const [authReady, setAuthReady] = useState(false)
 
@@ -48,56 +49,63 @@ export default function SongDetail() {
     }
   }
 
-  // LOAD DATA DENGAN JOIN PAKSA user_profiles!uploader_id
+  // LOAD DATA MANUAL (tanpa join)
   useEffect(() => {
     if (!authReady) return
 
     async function loadData() {
-      // ambil data song + paksa join ke user_profiles berdasarkan uploader_id FK
-      const { data: songData, error } = await supabase
-        .from("songs")
-        .select(`
-          *,
-          user_profiles!uploader_id (
-            username,
-            profile_pic
-          )
-        `)
-        .eq("id", id)
-        .single()
+      try {
+        // 1. Ambil data song
+        const { data: songData, error } = await supabase
+          .from("songs")
+          .select("*")
+          .eq("id", id)
+          .single()
 
-      if (error) {
-        console.error("Error fetching song:", error)
-        return
-      }
+        if (error) throw error
 
-      // set data awal (segera tampilkan)
-      setSong(songData)
+        let finalSong = { ...songData }
 
-      // ambil lyrics
-      const { data: lyricData } = await supabase
-        .from("song_lyrics")
-        .select("*")
-        .eq("song_id", id)
+        // 2. Ambil data uploader (manual fetch)
+        if (songData.uploader_id) {
+          const { data: profileData } = await supabase
+            .from("user_profiles")
+            .select("username, profile_pic")
+            .eq("id", songData.uploader_id)
+            .single()
 
-      setLyrics(lyricData || [])
-      setSelectedLang((lyricData && lyricData[0]) || null)
+          if (profileData) {
+            finalSong.user_profiles = profileData
+          }
+        }
 
-      // cek favorite untuk user login saat ini
-      const { data: { user } } = await supabase.auth.getUser()
-      if (user) {
-        const { data: fav } = await supabase
-          .from("favorites")
+        setSong(finalSong)
+
+        // 3. Ambil lyrics
+        const { data: lyricData, error: lyricError } = await supabase
+          .from("song_lyrics")
           .select("*")
           .eq("song_id", id)
-          .eq("user_id", user.id)
-          .maybeSingle()
 
-        setFavorite(!!fav)
-      }
+        if (lyricError) console.error("Error fetching lyrics:", lyricError)
 
-      // increment visits sederhana (tanpa logic per-hari)
-      try {
+        setLyrics(lyricData || [])
+        setSelectedLang((lyricData && lyricData[0]) || null)
+
+        // 4. Cek favorite untuk user login saat ini
+        const { data: { user } } = await supabase.auth.getUser()
+        if (user) {
+          const { data: fav } = await supabase
+            .from("favorites")
+            .select("*")
+            .eq("song_id", id)
+            .eq("user_id", user.id)
+            .maybeSingle()
+
+          setFavorite(!!fav)
+        }
+
+        // 5. Increment visits sederhana (tanpa logic per-hari)
         const newVisits = (songData?.visits || 0) + 1
         const { data: updatedSong, error: updErr } = await supabase
           .from("songs")
@@ -110,8 +118,8 @@ export default function SongDetail() {
           setSong(prev => ({ ...prev, visits: updatedSong.visits }))
         }
       } catch (err) {
-        console.error("Error incrementing visits:", err)
-        // jangan ganggu UX kalo error, tetap tampilkan data awal
+        console.error("Error loading data:", err)
+        setError(err.message)
       }
     }
 
@@ -126,6 +134,7 @@ export default function SongDetail() {
     }, 120)
   }
 
+  if (error) return <div style={{ padding: "2rem", color: "red" }}>Error: {error}</div>
   if (!song) return <div>Loading...</div>
 
   return (
@@ -184,7 +193,7 @@ export default function SongDetail() {
 
         <div className="lyricDisplayBox">
           <p className={`lyricText ${fade ? "fadeIn" : "fadeOut"}`}>
-            {selectedLang?.lyric}
+            {selectedLang?.text || selectedLang?.lyric || "Lirik tidak tersedia."}
           </p>
         </div>
       </div>

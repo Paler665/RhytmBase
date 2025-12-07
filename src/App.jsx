@@ -10,6 +10,7 @@ import Favorite from "./Pages/FavoritePage.jsx"
 import { Routes, Route, useNavigate, useLocation } from "react-router-dom"
 import { AuthProvider } from "./Context/AuthContext.jsx";
 import AddSong from "./Pages/AddSong.jsx"
+import EditProfile from "./Pages/editProfile.jsx"
 
 // motion import
 import { AnimatePresence, motion } from "framer-motion"
@@ -57,6 +58,7 @@ function AppContent() {
             <Route path="/about" element={<PageWrap><About /></PageWrap>} />
             <Route path="/favorites" element={<PageWrap><Favorite /></PageWrap>} />
             <Route path="/add-song" element={<PageWrap><AddSong /></PageWrap>} />
+            <Route path="/editProfile" element={<PageWrap><EditProfile /></PageWrap>} />
           </Routes>
         </AnimatePresence>
 
