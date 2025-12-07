@@ -43,3 +43,4 @@ export function AuthProvider({ children }) {
     </AuthContext.Provider>
   );
 }
+// Force HMR refresh

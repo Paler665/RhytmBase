@@ -78,26 +78,39 @@ export default function Profil() {
 
   // === AMBIL LAGU YANG DIUPLOAD USER ===
   const [addedSongs, setAddedSongs] = useState([])
+  const [isLoadingSongs, setIsLoadingSongs] = useState(false)
 
   useEffect(() => {
+    let isMounted = true
+
     async function loadAddedSongs() {
       if (!user) return
 
-      const { data, error } = await supabase
-        .from("songs")
-        .select("*")
-        .eq("uploader_id", user.id)
-        .order("created_at", { ascending: false })
+      try {
+        setIsLoadingSongs(true)
+        const { data, error } = await supabase
+          .from("songs")
+          .select("*")
+          .eq("uploader_id", user.id)
+          .order("created_at", { ascending: false })
 
-      if (error) {
-        console.log("Gagal ambil lagu yang ditambahkan:", error)
-        return
+        if (error) throw error
+
+        if (isMounted) {
+          setAddedSongs(data)
+        }
+      } catch (error) {
+        console.error("Error fetching songs:", error)
+      } finally {
+        if (isMounted) setIsLoadingSongs(false)
       }
-
-      setAddedSongs(data)
     }
 
     loadAddedSongs()
+
+    return () => {
+      isMounted = false
+    }
   }, [user])
 
   // === PAGINATION ===
@@ -119,14 +132,19 @@ export default function Profil() {
         <div className="detailWrapper">
           <div className="ProfilePicContainer">
             <img
-              src={profileData?.profile_pic || profilePicUrl}
+              // FIX: Jangan biarkan src kosong string. Gunakan null atau placeholder jika loading.
+              src={profileData?.profile_pic || profilePicUrl || null}
               alt="Profile"
               className="ProfilePic"
+              onError={(e) => {
+                // Fallback jika URL gambar error/broken
+                e.target.style.display = 'none';
+              }}
             />
           </div>
           <div className="ProfileDetail">
             <h1 className="ProfileName">
-              {profileData?.username || "Memuat username..."}
+              {profileData?.username || "..."}
             </h1>
             <h3 className="ProfileEmail">{user.email}</h3>
 
@@ -158,27 +176,45 @@ export default function Profil() {
         </div>
 
         <div className="uploadedSong">
-          {visible.map((item) => (
-            <div
-              key={item.id}
-              className="songCardUp"
-              onClick={() => navigate(`/songs/${item.id}`)}
-            >
-              <img
-                src={item.cover_url}
-                alt={item.title}
-                className="songImageUp"
-              />
+          {isLoadingSongs ? (
+            <p style={{ color: "white", textAlign: "center" }}>Memuat lagu...</p>
+          ) : visible.length > 0 ? (
+            visible.map((item) => (
+              <div
+                key={item.id}
+                className="songCardUp"
+                onClick={() => navigate(`/songs/${item.id}`)}
+              >
+                <img
+                  src={item.cover_url}
+                  alt={item.title}
+                  className="songImageUp"
+                />
 
-              <div className="songDesc">
-                <strong>{item.title}</strong>
-                <br />
-                {item.description?.length > 100
-                  ? item.description.slice(0, 100) + "..."
-                  : item.description}
+                <div className="songDesc">
+                  <strong>{item.title}</strong>
+                  <br />
+                  {item.description?.length > 100
+                    ? item.description.slice(0, 100) + "..."
+                    : item.description}
+                </div>
               </div>
+            ))
+          ) : (
+            <div style={{ textAlign: "center", width: "100%", padding: "20px" }}>
+              <p style={{ color: "gray" }}>Belum ada lagu yang diupload.</p>
+              {
+                /* Button refresh manual kalau user merasa ada lagu tp blm muncul
+                   berguna kalo delay network/consistency lama */
+              }
+              <button
+                onClick={() => window.location.reload()}
+                style={{ marginTop: '10px', fontSize: '12px', background: 'transparent', border: '1px solid gray', color: 'gray', padding: '4px 8px', borderRadius: '4px', cursor: 'pointer' }}
+              >
+                Refresh Data
+              </button>
             </div>
-          ))}
+          )}
         </div>
 
         {/* === PAGINATION === */}
