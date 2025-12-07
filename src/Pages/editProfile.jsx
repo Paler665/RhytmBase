@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom"
 import { useState, useEffect } from "react"
 import { supabase } from "../lib/supabaseClient"
-import "./EditProfile.css"
+import "./editProfile.css"
 
 export default function EditProfile() {
     const navigate = useNavigate()
